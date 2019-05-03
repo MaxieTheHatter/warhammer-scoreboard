@@ -5,23 +5,23 @@ public class ResourceModel {
 	private int resource;
 	
 	public ResourceModel() {
-		
+		// no args-constructor
 	}
-	
 
-	private String getType() {
+
+	public String getType() {
 		return type;
 	}
 
-	private void setType(String type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 
-	private int getResource() {
+	public int getResource() {
 		return resource;
 	}
 
-	private void setResource(int resource) {
+	public void setResource(int resource) {
 		this.resource = resource;
 	}
 }

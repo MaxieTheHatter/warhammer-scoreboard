@@ -9,7 +9,7 @@ public class PlayerModel {
 	private ArmyResource resource;
 	
 	public PlayerModel() {
-		
+		// no args-constructor
 	}
 	
 	public String getName() {

@@ -1,16 +1,17 @@
 package com.maxie.warhammer.application;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 
 import com.maxie.warhammer.domain.Player;
 import com.maxie.warhammer.domain.ArmyResource;
 
+import javax.validation.Valid;
+
 @RestController
 public class PlayerController {
 	
-	@RequestMapping(value = "/exampleplayer", method = RequestMethod.GET)
+	@GetMapping(value = "/exampleplayer")
 	public Player examplePlayer() {
 		Player player = new Player.Builder("exampleplayer")
 				.army("cheesedar")
@@ -25,6 +26,30 @@ public class PlayerController {
 		player.setArmyResource(armyResource);
 		
 		return player;
+	}
+
+	@PutMapping(value = "/player")
+	@ResponseStatus(HttpStatus.OK)
+	public Player updatePlayer(@Valid Player player) {
+		Player updatedPlayer = new Player.Builder(player.getName())
+				.army(player.getArmy())
+				.score(player.getScore())
+				.build();
+
+		updatedPlayer.setArmyResource(player.getArmyResource());
+		return updatedPlayer;
+	}
+
+	@PostMapping(value = "/player")
+	@ResponseStatus(HttpStatus.CREATED)
+	public Player createPlayer(@Valid Player player) {
+		Player createdPlayer = new Player.Builder(player.getName())
+				.army(player.getArmy())
+				.score(player.getScore())
+				.build();
+
+		createdPlayer.setArmyResource(player.getArmyResource());
+		return createdPlayer;
 	}
 	
 

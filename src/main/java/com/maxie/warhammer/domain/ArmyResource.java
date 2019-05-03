@@ -39,10 +39,10 @@ public class ArmyResource {
 		}
 		
 		public ArmyResource build() {
-			ArmyResource resource = new ArmyResource();
-			resource.setType(this.type);
-			resource.setResource(this.resource);
-			return resource;
+			ArmyResource armyResource = new ArmyResource();
+			armyResource.setType(this.type);
+			armyResource.setResource(this.resource);
+			return armyResource;
 		}
 	}
 

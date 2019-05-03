@@ -19,6 +19,10 @@ bootJar {
     version =  '0.1.0'
 }
 
+bootRun {
+    jvmArgs = ["-Dspring.output.ansi.enabled=ALWAYS"]
+}
+
 repositories {
     mavenCentral()
 }
