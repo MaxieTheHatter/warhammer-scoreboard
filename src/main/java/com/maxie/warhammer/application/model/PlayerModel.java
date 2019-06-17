@@ -3,6 +3,7 @@ package com.maxie.warhammer.application.model;
 import com.maxie.warhammer.domain.ArmyResource;
 
 public class PlayerModel {
+	private int id;
 	private String name;
 	private String army;
 	private int score;
@@ -42,5 +43,13 @@ public class PlayerModel {
 
 	public void setResource(ArmyResource resource) {
 		this.resource = resource;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }

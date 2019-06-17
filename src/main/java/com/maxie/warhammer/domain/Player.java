@@ -1,7 +1,8 @@
 package com.maxie.warhammer.domain;
 
 public class Player {
-	
+
+	private int id;
 	private String name;
 	private String army;
 	private int score;
@@ -43,13 +44,27 @@ public class Player {
 		this.armyResource = armyResource;
 	}
 
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	public static class Builder {
+		private int id;
 		private String name;
 		private String army;
 		private int score;
 		
 		public Builder(String name) {
 			this.name = name;
+		}
+
+		public Builder id(int id) {
+			this.id = id;
+			return this;
 		}
 		
 		public Builder army(String army) {
@@ -65,6 +80,7 @@ public class Player {
 		
 		public Player build() {
 			Player player = new Player();
+			player.setId(this.id);
 			player.setName(this.name);
 			player.setArmy(this.army);
 			player.setScore(this.score);
