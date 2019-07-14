@@ -1,6 +1,7 @@
 package com.maxie.warhammer.application.model;
 
 public class ResourceModel {
+	private int id;
 	private String type;
 	private int resource;
 	
@@ -23,5 +24,13 @@ public class ResourceModel {
 
 	public void setResource(int resource) {
 		this.resource = resource;
+	}
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
 	}
 }
